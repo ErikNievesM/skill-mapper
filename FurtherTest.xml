@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+           xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+           xsi:type="TaskPaneApp">
+
+  <Id>dd284448-d9a1-48f1-98b3-68bd7ed08cf7</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Erik Nieves</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="FurtherTest" />
+  <Description DefaultValue="Skill Mapping Add-in" />
+  <IconUrl DefaultValue="https://via.placeholder.com/32" />
+  <SupportUrl DefaultValue="https://www.example.com/support" />
+
+  <AppDomains>
+    <AppDomain>https://momentumservices1-my.sharepoint.com</AppDomain>
+  </AppDomains>
+
+  <Hosts>
+    <Host Name="Workbook" />
+  </Hosts>
+
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://momentumservices1-my.sharepoint.com/personal/erik_nieves_momentum_com/_layouts/15/download.aspx?SourceUrl=%2Fpersonal%2Ferik%5Fnieves%5Fmomentum%5Fcom%2FDocuments%2FUpload%2FTaskPane%2Ehtml" />
+  </DefaultSettings>
+
+  <Permissions>ReadWriteDocument</Permissions>
+
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="Workbook">
+        <DesktopFormFactor>
+          <FunctionFile resid="Taskpane.Url" />
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <OfficeTab id="TabHome">
+              <Group id="SkillGroup">
+                <Label resid="SkillGroup.Label" />
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16" />
+                  <bt:Image size="32" resid="Icon.32" />
+                  <bt:Image size="80" resid="Icon.80" />
+                </Icon>
+                <Control xsi:type="Button" id="SkillButton">
+                  <Label resid="SkillButton.Label" />
+                  <Supertip>
+                    <Title resid="SkillButton.Label" />
+                    <Description resid="SkillButton.Tooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16" />
+                    <bt:Image size="32" resid="Icon.32" />
+                    <bt:Image size="80" resid="Icon.80" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>SkillTaskPane</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Url" />
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+
+    <Resources>
+      <bt:Images>
+        <bt:Image id="Icon.16" DefaultValue="https://via.placeholder.com/16" />
+        <bt:Image id="Icon.32" DefaultValue="https://via.placeholder.com/32" />
+        <bt:Image id="Icon.80" DefaultValue="https://via.placeholder.com/80" />
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://momentumservices1-my.sharepoint.com/personal/erik_nieves_momentum_com/_layouts/15/download.aspx?SourceUrl=%2Fpersonal%2Ferik%5Fnieves%5Fmomentum%5Fcom%2FDocuments%2FUpload%2FTaskPane%2Ehtml" />
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="SkillGroup.Label" DefaultValue="Skill Mapping" />
+        <bt:String id="SkillButton.Label" DefaultValue="Open Skill Mapper" />
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="SkillButton.Tooltip" DefaultValue="Open the skill mapping pane" />
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>
